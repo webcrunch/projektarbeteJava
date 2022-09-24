@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 public class Band {
     // kanske lägga ihop vissa strings? members + instruments i samma? (kolla med grupp)
-    // arraylist för members och instrument?
+    // hashmap för members och instrument?
 
     public String bandName;
 
