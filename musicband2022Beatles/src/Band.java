@@ -11,13 +11,18 @@ public class Band {
 
     public String members;
 
-    public String disbanded;
+    public String yearDisbanded;
 
     public String instruments;
 
     public Band(String bandName, String members, int yearFounded) {
+    }
+    //which one, kolla med grupp
+    public void bandinfo(String bandName, String members, String instruments, int yearFounded, int yearDisbanded){
 
     }
+
+
     public ArrayList<Band> bands = new ArrayList<>();
     public void addBand(Band bandToAdd) {
         if (!bandToAdd.bands.contains(this)) {
