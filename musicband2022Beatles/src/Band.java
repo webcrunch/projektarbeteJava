@@ -1,38 +1,40 @@
 import java.util.ArrayList;
+import java.util.List;
+
 public class Band {
-    // kanske lägga ihop vissa strings? members + instruments i samma? (kolla med grupp)
-    // hashmap för members och instrument?
+    private String bandName;
 
-    public String bandName;
+    private String bandInfo;
 
-    public String bandInfo;
+    private int yearFounded;
 
-    public int yearFounded;
+    private List<Musiker> members=new ArrayList<>();
 
-    public String members;
+    private int yearDisbanded;
 
-    public String disbanded;
+    private String instruments;
 
-    public String instruments;
-
-    public Band(String bandName, String members, int yearFounded) {
-
-    }
     public ArrayList<Band> bands = new ArrayList<>();
-    public void addBand(Band bandToAdd) {
-        if (!bandToAdd.bands.contains(this)) {
-            bandToAdd.joinBand(this);
-        }
-        if (!bands.contains(bandToAdd)) {
-            bands.add(bandToAdd);
-        }
+    public Band(String bandName, int yearFounded, int yearDisbanded) {
+        this.bandName = bandName;
+        this.yearFounded = yearFounded;
+    }
+
+    public void addMember(Musiker musiker){
+               if (!members.contains(musiker))      {
+                   members.add(musiker);
+               }
+    }
+
+    public void kickMember(Musiker musiker){
+        members.remove(musiker);
     }
     public void joinBand(Band bandToJoin) {
         if (!bands.contains(bandToJoin)) {
             bands.add(bandToJoin);
         }
         if (!bandToJoin.bands.contains(this)) {
-            bandToJoin.addBand(this);
+           // bandToJoin.addBand(this);
         }
     }
     public void removeBand(Band bandToRemove) {
