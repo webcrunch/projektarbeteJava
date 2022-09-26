@@ -11,8 +11,10 @@ public class Album {
         this.info = info;
         this.year = year;
     }
+    public void removeAlbum(Album album){
+        albums.remove(album);
+    }
 
-    // for the test of creation of Album
     public void setAlbum(Album album){
         albums.add(album);
     }
