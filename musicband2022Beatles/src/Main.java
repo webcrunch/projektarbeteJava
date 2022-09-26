@@ -1,4 +1,9 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
+
+    public static List<Band> bandList = new ArrayList<>();
     public static void main(String[] args) {
         mainMenu();
         // creating a new album with dummy data and test if it will work.
