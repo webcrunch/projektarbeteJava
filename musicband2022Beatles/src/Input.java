@@ -1,3 +1,5 @@
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -151,6 +153,33 @@ public class Input {
         return (int) Math.floor(Math.random() * (max - min + 1) + min);
     }
 
+    public static int yearOfBirth(String birthDate) {
+        return Integer.parseInt(birthDate.split("-")[0]);
+    }
+
+    public static int monthOfBirth(String birthDate) {
+        return Integer.parseInt(birthDate.split("-")[1]);
+    }
+
+    public static int dateOfBirth(String birthDate) {
+        return Integer.parseInt(birthDate.split("-")[2]);
+    }
+
+    public static int yearNow() {
+        return now("yyyy");
+    }
+
+    public static int monthNow() {
+        return now("MM");
+    }
+
+    public static int dateNow() {
+        return now("dd");
+    }
+
+    public static int now(String pattern) {
+        return Integer.parseInt(new SimpleDateFormat(pattern).format(new Date()));
+    }
 
 }
 
