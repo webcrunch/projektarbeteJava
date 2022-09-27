@@ -8,16 +8,15 @@ public class Band {
 
     private int yearFounded;
 
-    private List<Musiker> members=new ArrayList<>();
-
     private int yearDisbanded;
 
     private String instruments;
-
+    private List<Musiker> members=new ArrayList<>();
     public ArrayList<Band> bands = new ArrayList<>();
     public Band(String bandName, int yearFounded, int yearDisbanded) {
         this.bandName = bandName;
         this.yearFounded = yearFounded;
+        this.yearDisbanded = yearDisbanded;
     }
 
     public void addMember(Musiker musiker){
@@ -35,12 +34,6 @@ public class Band {
         }
         if (!bandToJoin.bands.contains(this)) {
            // bandToJoin.addBand(this);
-        }
-    }
-    public void removeBand(Band bandToRemove) {
-        bands.remove(bandToRemove);
-        if (bandToRemove.bands.contains(this)) {
-            bandToRemove.removeBand(this);
         }
     }
 }
