@@ -6,7 +6,7 @@ public class Musiker {
     private String name;
     private String info;
     private int birthYear;
-    private ArrayList<Band> bands = new ArrayList<>();
+    private ArrayList<Band> currentBands = new ArrayList<>();
 
     public void setName(String name) {
         this.name = name;
@@ -29,12 +29,12 @@ public class Musiker {
         return birthYear;
     }
 
-    public ArrayList<Band> getBands() {
-        return bands;
+    public ArrayList<Band> getCurrentBands() {
+        return currentBands;
     }
 
-    public void setBands(ArrayList<Band> bands) {
-        this.bands = bands;
+    public void setCurrentBands(ArrayList<Band> currentBands) {
+        this.currentBands = currentBands;
     }
 
     public Musiker(String name, String info, int birthYear) {
@@ -49,19 +49,19 @@ public class Musiker {
         return  Input.yearNow() - birthYear;
     }
 
-    public void addBand(Band band){
-        if(bands.contains(band)){
+    public void addCurrentBand(Band band){
+        if(currentBands.contains(band)){
             System.out.println(this.name + " is already part of this band!");
         }else{
-            bands.add(band);
+            currentBands.add(band);
         }
     }
 
-    public void removeBand(Band band){
-        if(!bands.contains(band)){
+    public void removeCurrentBand(Band band){
+        if(!currentBands.contains(band)){
             System.out.println("Band doesn't exist!");
         }else{
-            bands.remove(band);
+            currentBands.remove(band);
         }
     }
 
