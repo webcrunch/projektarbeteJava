@@ -1,18 +1,20 @@
 import java.util.ArrayList;
 
 public class Album {
-    public String name;
-    public String info;
-    public int year;
+    private String name;
+    private String info;
+    private int publishYear;
     // Remove the arraylist??. Only using it to test so the creation of album is working...
     public ArrayList<Album> albums = new ArrayList<>();
     public Album(String name, String info, int year){
         this.name = name;
         this.info = info;
-        this.year = year;
+        this.publishYear = year;
+    }
+    public void removeAlbum(Album album){
+        albums.remove(album);
     }
 
-    // for the test of creation of Album
     public void setAlbum(Album album){
         albums.add(album);
     }
