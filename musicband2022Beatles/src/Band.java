@@ -11,7 +11,8 @@ public class Band {
     private int yearDisbanded;
 
     private String instruments;
-    private List<Musiker> members=new ArrayList<>();
+    private ArrayList<Musiker> members=new ArrayList<>();
+    //onödig Arraylist?
     public ArrayList<Band> bands = new ArrayList<>();
     public Band(String bandName, int yearFounded, int yearDisbanded) {
         this.bandName = bandName;
@@ -28,6 +29,7 @@ public class Band {
     public void kickMember(Musiker musiker){
         members.remove(musiker);
     }
+    //Den här verkar ligga i fel klass, borde ligga i musiker?
     public void joinBand(Band bandToJoin) {
         if (!bands.contains(bandToJoin)) {
             bands.add(bandToJoin);
