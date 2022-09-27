@@ -6,6 +6,7 @@ public class Main {
     public static List<Band> bandList = new ArrayList<>();
     public static void main(String[] args) {
         mainMenu();
+
         // creating a new album with dummy data and test if it will work.
         /*Album testAlbum = new Album("AlbumTest", "this is a structural base of the beast", 2022);
         testAlbum.setAlbum(testAlbum);
@@ -39,7 +40,11 @@ public class Main {
                 if(action.equals("Visa")){
                     System.out.println("display on band");
                 } else if (action.equals("Lägg till")) {
-                    System.out.println("Add a band");
+                    // start with an easy coding to get something there.
+                    String bandName = Input.string("Whats the bands name?");
+                    String bandInfo = Input.string("Information about the band?");
+                    int bandYear = Input.integer("What year did the band started?");
+                    //int bandDisbanded = Input.integer("If the band has been disbanded. Otherwise just set a -1");
                 }else{
                     System.out.println("Otherwise remove band");
                 }
@@ -48,7 +53,10 @@ public class Main {
                 if(action.equals("Visa")){
                     System.out.println("display album");
                 } else if (action.equals("Lägg till")) {
-                    System.out.println("add Album");
+                    String bandName = Input.string("Whats the Albums name?");
+                    String bandInfo = Input.string("Information about the Album?");
+                    int bandYear = Input.integer("What year did the Album publish?");
+
                 }else{
                     System.out.println("otherwise remove album");
                 }
