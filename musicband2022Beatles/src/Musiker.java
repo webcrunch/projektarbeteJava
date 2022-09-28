@@ -1,11 +1,11 @@
 import java.time.Year;
 import java.util.ArrayList;
 
-public class Musiker {
+public class Musiker extends Item{
 
     private String name;
     private String info;
-    private int birthYear;
+    private Integer birthYear;
     private ArrayList<Band> currentBands = new ArrayList<>();
 
     public void setName(String name) {
@@ -37,10 +37,11 @@ public class Musiker {
         this.currentBands = currentBands;
     }
 
-    public Musiker(String name, String info, int birthYear) {
+    public Musiker(String name, String info, Integer birthYear) {
         setName(name);
         setInfo(info);
         setBirthYear(birthYear);
+        ItemStore.add(this);
     }
 
 
@@ -64,7 +65,4 @@ public class Musiker {
             currentBands.remove(band);
         }
     }
-
-
-
 }

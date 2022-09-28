@@ -1,23 +1,28 @@
+import com.google.gson.annotations.JsonAdapter;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Band {
+public class Band extends Item{
     private String bandName;
 
     private String bandInfo;
 
-    private int yearFounded;
+    private Integer yearFounded;
 
-    private int yearDisbanded;
+    private Integer yearDisbanded;
 
     private String instruments;
+    @JsonAdapter(ItemListAdapter.class)
     private ArrayList<Musiker> members=new ArrayList<>();
     //onödig Arraylist?
+    @JsonAdapter(ItemListAdapter.class)
     public ArrayList<Band> bands = new ArrayList<>();
-    public Band(String bandName, int yearFounded, int yearDisbanded) {
+    public Band(String bandName, Integer yearFounded, Integer yearDisbanded) {
         this.bandName = bandName;
         this.yearFounded = yearFounded;
         this.yearDisbanded = yearDisbanded;
+        ItemStore.add(this);
     }
 
     public void addMember(Musiker musiker){
